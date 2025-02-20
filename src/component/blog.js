@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Blog = () => {
   const blogs = [
@@ -78,16 +79,17 @@ const Blog = () => {
   return (
     <div className="bg-black min-h-screen py-10 font-serif">
     <div className="container mx-auto px-4">
-      <h1 className="text-4xl font-extrabold text-center text-white mb-10 mt-11">
+      <h1 className="text-4xl font-extrabold text-center text-white mb-10 mt-14">
         Our Blog
       </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {blogs.map((blog) => (
-          <div
-            key={blog.id}
-            className="bg-white shadow-lg rounded-lg overflow-hidden group relative transition-all duration-500 hover:scale-105 hover:shadow-2xl"
-          >
+         <div
+         key={blog.id}
+         className="bg-white shadow-lg rounded-lg overflow-hidden group relative transition-all duration-500 hover:scale-105 hover:shadow-2xl cursor-pointer"
+         onClick={() => window.open(`https://wa.me/919876543210?text=I'm interested in ${blog.title}`, "_blank")}
+       >
             {/* Image Section */}
             <div className="relative">
               <img
@@ -110,20 +112,54 @@ const Blog = () => {
 
               {/* Read More Button */}
               <div className="mt-4">
-                <Link
-                  to={`/blog/${blog.id}`}
-                  className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-800 transition-all duration-300"
-                >
-                  Read More →
-                </Link>
+              <Link
+           to="#"
+  onClick={() => window.open(`https://wa.me/919876543210?text=I'm interested in ${blog.title}`, "_blank")}
+  className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-800 transition-all duration-300"
+>
+  Read More →
+</Link>
               </div>
             </div>
           </div>
         ))}
       </div>
     </div>
+    <WhatsAppButton/>
   </div>
   );
 };
+
+const WhatsAppButton = () => {
+    return (
+      <div className="fixed bottom-5 right-5 z-50 items-center space-x-2">
+           
+        <a
+          href="https://wa.me/919876543210" // Replace with your WhatsApp number
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center bg-green-500 text-white py-2 px-4 rounded-full shadow-lg hover:bg-green-600 transition"
+        >
+     
+          <FaWhatsapp size={30} className="mr-2" /> 
+          <span className="font-semibold">Get Online Ticket</span>
+        </a><br></br>
+        <div>
+        <a
+          href="https://wa.me/919876543210" // Replace with your WhatsApp number
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center bg-green-500 text-white py-2 px-4 rounded-full shadow-lg hover:bg-green-600 transition"
+        >
+     
+          <FaWhatsapp size={30} className="mr-2" /> 
+          <span className="font-semibold">Get Online Ticket</span>
+        </a>
+        </div>
+      </div>
+    );
+  };
+
+
 
 export default Blog;

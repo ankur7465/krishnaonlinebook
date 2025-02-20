@@ -1,12 +1,12 @@
 import React from "react";
 import { FaGamepad, FaUsers, FaShieldAlt, FaMoneyBillWave, FaTrophy } from "react-icons/fa";
-
+import { FaWhatsapp } from "react-icons/fa";
 const AboutUs = () => {
   return (
     <div className="bg-black text-white min-h-screen py-10 font-serif">
       <div className="container mx-auto px-6">
         {/* Header */}
-        <h1 className="text-4xl font-extrabold text-center mb-6 mt-9 animate-bounce">
+        <h1 className="text-4xl font-extrabold text-center mb-6 mt-28 animate-bounce">
           Krishna Online Book - #1 Online Betting ID Provider
         </h1>
         <p className="text-center text-gray-300 max-w-3xl mx-auto mb-10">
@@ -19,13 +19,13 @@ const AboutUs = () => {
           <h2 className="text-3xl font-semibold mb-3 flex items-center ">
             <FaShieldAlt className="mr-3 text-blue-500 text-center" /> Our Mission
           </h2>
-          <p className="text-gray-300 text-2xl">
-          Krishna Online Book Is the #1 Online IDs Provider
+          <p className="text-gray-300 text-2xl text-center mb-2">
+        <mark>  Krishna Online Book Is the #1 Online IDs Provider</mark>
           </p>
           <p className="text-gray-300 text-2xl mt-2">
-            <mark>
+            
             Krishna Online Book - Your Premier Destination in India for Secure and Reliable Online Betting IDs
-            </mark>
+            
           </p><br></br>
           <p> Krishna Online Book primarily caters to Indian players, but individuals residing in countries where online gambling and betting are legal can also explore the platform. With a rapidly expanding audience surpassing 10 million users, Mahadev Book is gaining traction. Here are some essential insights about this website to consider before signing up.<br></br><br></br>
 
@@ -140,8 +140,40 @@ const PaymentOptions = () => {
           </a>
         ))}
       </div>
+      <WhatsAppButton/>
       </div>
       
+    );
+  };
+
+
+  const WhatsAppButton = () => {
+    return (
+      <div className="fixed bottom-5 right-5 z-50 items-center space-x-2">
+           
+        <a
+          href="https://wa.me/919876543210" // Replace with your WhatsApp number
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center bg-green-500 text-white py-2 px-4 rounded-full shadow-lg hover:bg-green-600 transition"
+        >
+     
+          <FaWhatsapp size={30} className="mr-2" /> 
+          <span className="font-semibold">Get Online Ticket</span>
+        </a><br></br>
+        <div>
+        <a
+          href="https://wa.me/919876543210" // Replace with your WhatsApp number
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center bg-green-500 text-white py-2 px-4 rounded-full shadow-lg hover:bg-green-600 transition"
+        >
+     
+          <FaWhatsapp size={30} className="mr-2" /> 
+          <span className="font-semibold">Get Online Ticket</span>
+        </a>
+        </div>
+      </div>
     );
   };
 

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -34,7 +35,7 @@ const Contact = () => {
   return (
     <div className="bg-black text-white min-h-screen py-10 font-serif">
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-extrabold text-center mb-6 mt-6">Contact Us</h1>
+        <h1 className="text-4xl font-extrabold text-center mb-6 mt-14">Contact Us</h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Contact Form */}
@@ -116,8 +117,39 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      <WhatsAppButton/>
     </div>
   );
 };
+
+const WhatsAppButton = () => {
+    return (
+      <div className="fixed bottom-5 right-5 z-50 items-center space-x-2">
+           
+        <a
+          href="https://wa.me/919876543210" // Replace with your WhatsApp number
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center bg-green-500 text-white py-2 px-4 rounded-full shadow-lg hover:bg-green-600 transition"
+        >
+     
+          <FaWhatsapp size={30} className="mr-2" /> 
+          <span className="font-semibold">Get Online Ticket</span>
+        </a><br></br>
+        <div>
+        <a
+          href="https://wa.me/919876543210" // Replace with your WhatsApp number
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center bg-green-500 text-white py-2 px-4 rounded-full shadow-lg hover:bg-green-600 transition"
+        >
+     
+          <FaWhatsapp size={30} className="mr-2" /> 
+          <span className="font-semibold">Get Online Ticket</span>
+        </a>
+        </div>
+      </div>
+    );
+  };
 
 export default Contact;

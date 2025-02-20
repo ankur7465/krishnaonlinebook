@@ -11,10 +11,7 @@ function App() {
   return (
     <div className="bg-black">
       <Router>
-        {/* Navbar should be outside of Routes to appear on all pages */}
         <Navbar />
-
-        {/* Routes for different pages */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutUs />} />
@@ -22,8 +19,6 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<Blogdeatils />} />
         </Routes>
-
-        {/* Footer */}
         <Fotter />
       </Router>
     </div>
