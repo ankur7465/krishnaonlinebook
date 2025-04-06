@@ -10,24 +10,33 @@ const Navbar = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!isLoginForm) {
-      window.location.href = "https://wa.me/919876543210"; // Replace with your WhatsApp number
+      window.location.href = "https://wa.me/919876543210";
     }
   };
 
   return (
-    <div>
+    <div className="relative">
       {/* Navbar */}
-      <nav className="bg-black text-white px-4 py-3 shadow-md fixed top-0 left-0 w-full z-50">
-        <div className="max-w-screen-xl mx-auto flex items-center justify-between">
+      <nav className="bg-black text-white px-6 py-3 shadow-md fixed top-0 left-0 w-full z-50">
+        <div className="max-w-screen-xl mx-auto flex justify-between items-center">
           {/* Logo */}
-          <img src="/images/logo4.jpg" alt="Logo" className="h-12 w-16 ml-28 cursor-pointer"
-          onClick={() => window.open("https://wa.me/917465984577", "_blank")} />
-          <Link to="https://wa.me/919876543210" className="text-xl font-bold hover:text-gray-300 transition mr-96">
-            Krishnaji Online Book
-          </Link>
-          
+          <div className="flex items-center">
+            <img
+              src="/images/logo4.jpg"
+              alt="Logo"
+              className="h-12 w-16 cursor-pointer"
+              onClick={() => window.open("https://wa.me/917465984577", "_blank")}
+            />
+            <Link
+              to="https://wa.me/919876543210"
+              className="ml-4 text-xl font-bold hover:text-gray-300"
+            >
+              Krishnaji Online Book
+            </Link>
+          </div>
+
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-6 items-center mr-12">
+          <div className="hidden md:flex space-x-6 items-center">
             <Link to="/" className="hover:text-gray-300 transition">Home</Link>
             <Link to="/about" className="hover:text-gray-300 transition">About Us</Link>
             <Link to="/contact" className="hover:text-gray-300 transition">Contact</Link>
@@ -40,25 +49,27 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button className="md:hidden text-white" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-          </button>
+          {/* Mobile Toggle Button */}
+          <div className="md:hidden">
+            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white">
+              {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-14 left-0 w-full bg-black text-white flex flex-col items-center py-4 space-y-4 shadow-lg">
-            <Link to="/" className="hover:text-gray-300 transition">Home</Link>
-            <Link to="/about" className="hover:text-gray-300 transition">About Us</Link>
-            <Link to="/contact" className="hover:text-gray-300 transition">Contact</Link>
-            <Link to="/blog" className="hover:text-gray-300 transition">Blog</Link>
+          <div className="md:hidden bg-black text-white w-full px-6 pt-4 pb-6 space-y-4">
+            <Link to="/" onClick={() => setIsMenuOpen(false)} className="block hover:text-gray-300">Home</Link>
+            <Link to="/about" onClick={() => setIsMenuOpen(false)} className="block hover:text-gray-300">About Us</Link>
+            <Link to="/contact" onClick={() => setIsMenuOpen(false)} className="block hover:text-gray-300">Contact</Link>
+            <Link to="/blog" onClick={() => setIsMenuOpen(false)} className="block hover:text-gray-300">Blog</Link>
             <button
               onClick={() => {
                 setIsLoginVisible(true);
                 setIsMenuOpen(false);
               }}
-              className="bg-blue-600 hover:bg-blue-700 text-white py-1 px-4 rounded-md transition"
+              className="w-full bg-blue-600 hover:bg-blue-700 py-2 rounded-md"
             >
               Login
             </button>
@@ -66,7 +77,7 @@ const Navbar = () => {
         )}
       </nav>
 
-      {/* Login Form Modal */}
+      {/* Login Modal */}
       {isLoginVisible && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-50">
           <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-sm relative">
