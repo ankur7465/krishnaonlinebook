@@ -7,7 +7,7 @@ const AboutUs = () => {
       <div className="container mx-auto px-6">
         {/* Header */}
         <h1 className="text-4xl font-extrabold text-center mb-6 mt-28 animate-bounce">
-          Krishna Online Book - #1 Online Betting ID Provider
+          Krishnaji Online Book - #1 Online Betting ID Provider
         </h1>
         <p className="text-center text-gray-300 max-w-3xl mx-auto mb-10">
           Your premier destination in India for secure and reliable online betting IDs. 
